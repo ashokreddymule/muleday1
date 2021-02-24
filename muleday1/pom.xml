@@ -38,7 +38,7 @@
 						<muleVersion>4.3.0</muleVersion>
 						<workers>1</workers>
 						<workerType>Micro</workerType>
-						<applicationName>mulebuild_New</applicationName>
+						<applicationName>mulebuildNewAshok</applicationName>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
