@@ -18,6 +18,5 @@ output application/json
 "Welcome!" ++ payload.firstName++" "++ payload.lastname	++"." ++ "Your customer id is " ++ payload.cid++"."  ]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="90a5ddec-f376-4710-90eb-54ccfcd57582" message="#[payload]"/>
 	</flow>
 </mule>
