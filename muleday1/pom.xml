@@ -14,7 +14,7 @@
 
 		<sonar.sources>src/main/mule</sonar.sources>
 		<sonar.tests />
-		
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -25,6 +25,27 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.6</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>nexus</serverId>
+					<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+					<skipStaging>true</skipStaging>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
@@ -76,6 +97,7 @@
 	</build>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.sonarsource.scanner.maven</groupId>
 			<artifactId>sonar-maven-plugin</artifactId>
@@ -140,5 +162,14 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>mulerelease</id>
+			<name>mulerelease</name>
+			<url>http://localhost:8081/repository/muleday1Repo/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 
 </project>
