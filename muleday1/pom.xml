@@ -32,7 +32,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>nexus</serverId>
-					<nexusUrl>http://localhost:8081/repository/muleday1Repo/</nexusUrl>
+					<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
 					<skipStaging>true</skipStaging>
 				</configuration>
 				<executions>
